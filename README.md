@@ -16,9 +16,9 @@ Además de esto se requiere tener aprovisionado:
 ## Comenzando 🚀
 _Instrucciones_
 
-Para la implementación de Cloud Internet Services en una VPC se procede a la creación de un servicio de Internet Services, siguiendo las siguientes instrucciones:
+Para la implementación de Cloud Internet Services en una VPC se procede a la creación de un servicio de Internet Services, siguiendo las instrucciones del siguiente enlace:
 
-
+- [Iniciación a IBM Cloud Internet Services](https://cloud.ibm.com/docs/cis?topic=cis-getting-started)
 
 ### Variables 📋
 
