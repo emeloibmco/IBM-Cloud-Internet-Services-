@@ -7,15 +7,17 @@ _Implementación de Cloud Internet Services en una aplicaación desplegada en un
 ## Prerrequisitos 🚀
 
 Para esta Demo se requiere de conocimiento básico de DNS y redes.
-Además de esto se 
+Además de esto se requiere tener aprovisionado:
+- [VPC.](https://cloud.ibm.com/docs/vpc?topic=vpc-getting-started)
+- [Instancia en una VPC](https://cloud.ibm.com/docs/vpc?topic=vpc-vsi_best_practices) con un servicion web configurado en ella.
+- [Load Balancer.](https://cloud.ibm.com/docs/vpc?topic=vpc-nlb-vs-elb)
+- [Listas de control de accesos](https://cloud.ibm.com/docs/vpc?topic=vpc-using-acls)
 
 ## Comenzando 🚀
 _Instrucciones_
 
-Para el aprovisionamiento de un BareMetal-SAP se requiere facturación mensual la cual cuenta con minimo 3 archivos en GITHUB los cuales son:
-- variable.tf = Contiene las variables de llaves y nombres unicos que el cliente introduce en su servicio
-- main.tf = Archivo principal que contiene las funciones de aprovisionamiento de recursos 
-- provider.tf = Instalador de provider IBM sobre Schematics
+Para la implementación de Cloud Internet Services en una VPC se procede a la creación de un servicio de Internet Services, siguiendo las siguientes instrucciones:
+
 
 
 ### Variables 📋
