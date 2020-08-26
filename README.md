@@ -39,7 +39,13 @@ Luego de ello debe configurar un DNS reservado en el Internet Services creado pr
 
     <img width="940" alt="Conf domain" src="Assets/Images/set_domain.PNG"> 
 
+    Una vez configurado el DNS reservado en la herramienta de Internet Service el estado del dominió aparecerá **pending** como se observa en la siguiente imagen:
 
+    <img width="940" alt="state" src="Assets/Images/state_pre_ns.PNG"> 
+
+    3. Para dejar el estado del dominio en Internet Services activo se debe configurar los **NS** antes mencionados en los records de Internet Services. Para ello, se debe dirigir a la pestaña de **Reliability** en la opción de **DNS**. Una vez allí, en la parte inferior de la ventana se encontraran los **Records** donde se configurarán los **NS** como se observa a continuación:
+
+    <img width="800" alt="records" src="Assets/Images/add_record.PNG"> 
 
 
 
