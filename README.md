@@ -1,6 +1,6 @@
 # IBM-Cloud-Internet-Services-
 
-_Implementación de Cloud Internet Services en una aplicaación desplegada en una Instancia de VPC_
+En ste repositorio encontrará el detalle de la implementación de IBM Cloud Internet Services con una aplicación desplegada en dos VSI on VPC para alta disponibilidad y cuyo tráfico es gestionado por un Balanceador de Carga. También encontrará el paso a paso de la configuración de los diferentes servicios de Internet services para la seguridad de la aplicación web.
 
 <img width="940" alt="BareMetal-Architecture" src="Assets/Images/architecture.PNG">
 
@@ -24,7 +24,8 @@ Esta demo se divide en 4 factores importantes las cuales son:
 Las diferentes configuraciones de esta demo se gestionan en diferentes servicios como **Cloud Internet Services**, **Virtual Private Cloud**, **Certificate Manager** e incluso la herramienta de **Access IAM**
 
 ## Comenzando 🚀
-### Configuración del dominio y el hostname
+
+### 1. Configuración del dominio
 **Cloud Internet Services**
 Para empezar, se debe crear un servicio de Internet Services, siguiendo las instrucciones del siguiente enlace:
 - [Iniciación a IBM Cloud Internet Services](https://cloud.ibm.com/docs/cis?topic=cis-getting-started)
@@ -77,15 +78,23 @@ Como se muestra a continuación:
 
 <img width="800" alt="lb_vpc" src="Assets/Images/lbs.PNG"> 
 
-**Load balancer - Hostname Record Cloud Internet Services**
+**Load balancer - Hostname DNS Record**
 
-Para esta parte se vinculará el hostname del Load balancer a los DNS Records, para que el dominio del Internet Services se le asigne a la aplicación que se esta configurando. Se debe agregar el hostname de la siguiente manera:
+Para que vincular su dominio personalizado a la aplicación que se está configurando aguregue un registro CNAME que apunte al Host name del Load Balancer y active el proxy, de la siguiente manera:
 
 <img width="800" alt="lb_record" src="Assets/Gifs/lb_record.gif"> 
 
-### Configuración de accesos a la aplicación 🔧
+### 2. Configuración de acceso a la aplicación 🔧
 
-Esta configuración se realiza para limitar el accesos a la aplicación ya sea por la IP de la VSI, el hostname del Load Balancer y la IP asignada a cada VSI por el Load Balancer. Pero sin evitar que el servicio de **Internet Services** acceda a esta.
+Esta configuración se realiza para mejorar la seguridad de la aplicación, ya que limita el acceso mediante la creación de una ACL, permitiendo la comunicación al Load Balancer únicamente desde la instancia de Internet Services. Para la configuración siga los pasos a continuación:
+
+1. Ingrese en las lista de VPC´s dentro de la página de IBM Cloud, allí encontrará el nombre de su VPC con la ACL y grupo de seguridad asociados de forma predeterminada, ingrese a la ACL dando click sobre su nombre.
+
+<img width="800" alt="ACL_record" src="Assets/Images/ACL_on_VPC.png"> 
+
+2. Por defecto la ACL deniega todo el tráfico, por lo que en este paso solo debe agregar reglas para permitir el tráfico proveniente de Internet Services. (La API en este link)[https://api.cis.cloud.ibm.com/v1/ips] enumera todas las direcciones IP utilizadas por el proxy de CIS. El proxy de CIS utiliza solo direcciones de esta lista, tanto para la comunicación de cliente a proxy como de proxy a origen. Agregue una regla para cada uno de estos rangos de IP´s seleccionando **Crear**, en protocolos seleccione**Todos**, luego seleccione **CI o CIDR** y pegue la IP, en destino seleccione **Cualquiera** y para finalizar guarde los cambios.
+
+<img width="800" alt="lb_record" src="Assets/Gifs/add_rule.gif"> 
 
 ### Certificación SSL 🛡️
 
