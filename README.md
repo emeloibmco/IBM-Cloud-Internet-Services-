@@ -57,9 +57,13 @@ Luego de ello debe configurar un DNS reservado en el Internet Services creado pr
 
 **VPC hostname - Load Balancer**
 Para la configuración del hostname a la aplicación distribuida en las VSI´s, se requiere de la creación de un Load balancer para asignarle un único hostname a la aplicación.
-Para aprovisionar el Load Balancer se debe dirigir al **VPC Infrastructure** en el menú principal de IBM Cloud y una vez allí debe ingresar al dashboard del Load balancer seleccionando **Load Balancer** en el menu de herramientas de VPC como se observa a continuación:
+Para aprovisionar el Load Balancer se debe dirigir al **VPC Infrastructure** en el menú principal de IBM Cloud y una vez allí debe ingresar al dashboard del Load balancer seleccionando **Load Balancer** en el menu de herramientas de VPC como se observa el la siguiente imagen:
 
 <img width="800" alt="lb_vpc" src="Assets/Images/lb_vpc.PNG"> 
+
+Una vez allí se procede a crear el load balancer como se observa a continuación:
+
+<img width="800" alt="lb_vpc" src="Assets/Gifs/lb_create.gif"> 
 
  [APIkey-ClassicInfrastructure](https://cloud.ibm.com/docs/iam?topic=iam-classic_keys&locale=es)
 
