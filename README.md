@@ -13,12 +13,22 @@ Además de esto se requiere tener aprovisionado:
 - [Load Balancer.](https://cloud.ibm.com/docs/vpc?topic=vpc-nlb-vs-elb)
 - [Listas de control de accesos](https://cloud.ibm.com/docs/vpc?topic=vpc-using-acls)
 
+Además de los recursos de IBM Cloud se requiere de un **DNS** reservado. Sin embargo, si no tiene un **DNS** reservado puede aprovisionar uno con IBM Cloud:
+
+- [Registro de DNS](https://cloud.ibm.com/docs/dns/getting-started.html)
+
+
 ## Comenzando 🚀
 _Instrucciones_
 
 Para la implementación de Cloud Internet Services en una VPC se procede a la creación de un servicio de Internet Services, siguiendo las instrucciones del siguiente enlace:
 
 - [Iniciación a IBM Cloud Internet Services](https://cloud.ibm.com/docs/cis?topic=cis-getting-started)
+
+Ingrese al recurso de Internet Services en IBM Cloud y proceda a conectar el Dominion reservado en este recurso.
+Para ello realice lo siguiente:
+
+
 
 ### Variables 📋
 
