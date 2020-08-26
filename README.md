@@ -2,7 +2,7 @@
 
 _Implementación de Cloud Internet Services en una aplicaación desplegada en una Instancia de VPC_
 
-<img width="940" alt="BareMetal-Architecture" src="Assets/Images/Let´s_start_CIS.PNG">
+<img width="940" alt="BareMetal-Architecture" src="">
 
 ## Prerrequisitos 🛑
 
@@ -32,7 +32,7 @@ Para empezar, se debe crear un servicio de Internet Services, siguiendo las inst
 Luego de ello debe configurar un DNS reservado en el Internet Services creado previamente de la siguiente manera:
 - Si ya se tiene un DNS reservado debe copiar los NS (Name Servers) y configurarlos dentro de Internet Services. Los NS tienen la siguiente estructura **ns#.provider.com**. Si tiene más de una deberá configurarlo en Internet Services como se muestra a continuación:
     1. Ingrese a la herramienta de Internet Services creada. Le va a aparecer el siguiente Dashboard:
-       <img width="940" alt="CIS Dashboard" src="Assets/Images/"> 
+       <img width="940" alt="CIS Dashboard" src="Assets/Images/Let´s_start_CIS.PNG"> 
     2. 
 
 
