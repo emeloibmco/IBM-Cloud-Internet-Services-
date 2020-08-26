@@ -32,8 +32,13 @@ Para empezar, se debe crear un servicio de Internet Services, siguiendo las inst
 Luego de ello debe configurar un DNS reservado en el Internet Services creado previamente de la siguiente manera:
 - Si ya se tiene un DNS reservado debe copiar los NS (Name Servers) y configurarlos dentro de Internet Services. Los NS tienen la siguiente estructura **ns#.provider.com**. Si tiene más de una deberá configurarlo en Internet Services como se muestra a continuación:
     1. Ingrese a la herramienta de Internet Services creada. Le va a aparecer el siguiente Dashboard:
-       <img width="940" alt="CIS Dashboard" src="Assets/Images/Let´s_start_CIS.PNG"> 
-    2. 
+    
+    <img width="940" alt="CIS Dashboard" src="Assets/Images/Let´s_start_CIS.PNG"> 
+
+    2. Al clickear en **Let´s start** aparecerá una pesataña lateral para conectar el dominio, configurar DNS record y delegar gestión del dominio, como se muestra a continuación:
+
+    <img width="940" alt="Conf domain" src="Assets/Images/set_domain.PNG"> 
+
 
 
 
