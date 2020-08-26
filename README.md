@@ -56,6 +56,7 @@ Luego de ello debe configurar un DNS reservado en el Internet Services creado pr
     Una vez configurados los **Name Server** la conexión entre el DNS y el Internet Services tomará hasta 24 horas.
 
 **VPC hostname - Load Balancer**
+
 Para la configuración del hostname a la aplicación distribuida en las VSI´s, se requiere de la creación de un Load balancer para asignarle un único hostname a la aplicación.
 Para aprovisionar el Load Balancer se debe dirigir al **VPC Infrastructure** en el menú principal de IBM Cloud y una vez allí debe ingresar al dashboard del Load balancer seleccionando **Load Balancer** en el menu de herramientas de VPC como se observa el la siguiente imagen:
 
