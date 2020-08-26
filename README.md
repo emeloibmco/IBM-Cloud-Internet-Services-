@@ -43,15 +43,15 @@ Luego de ello debe configurar un DNS reservado en el Internet Services creado pr
 
     <img width="940" alt="state" src="Assets/Images/state_pre_ns.PNG"> 
 
-    3. Para dejar el estado del dominio en Internet Services activo se debe configurar los **NS** antes mencionados en los records de Internet Services. Para ello, se debe dirigir a la pestaña de **Reliability** en la opción de **DNS**. Una vez allí, en la parte inferior de la ventana se encontraran los **Records** donde se configurarán los **NS** como se observa a continuación:
-
-    <img width="800" alt="records" src="Assets/Images/add_record.PNG"> 
+    3. Para dejar el estado del dominio en Internet Services activo se debe configurar los **NS** antes mencionados en los records de Internet Services. Para ello, se debe dirigir a la pestaña de **Reliability** en la opción de **DNS**. Una vez allí, en la parte inferior de la ventana se encontraran los **Records** donde se configurarán los **NS**
 
     Se debe llenar cada uno de los campos de **DNS Records** de la siguiente manera:
      - Type: NS
      - Name: @
      - TTL: Automatic
      - Name Server: **ns´s del DNS reservado**
+
+    <img width="800" alt="records" src="Assets/Gifs/ns_record.gif"> 
 
     Una vez configurados los **Name Server** la conexión entre el DNS y el Internet Services tomará hasta 24 horas.
 
@@ -63,9 +63,24 @@ Para aprovisionar el Load Balancer se debe dirigir al **VPC Infrastructure** en 
 
 Una vez allí se procede a crear el load balancer como se observa a continuación:
 
-<img width="800" alt="lb_vpc" src="Assets/Gifs/lb_create.gif"> 
+<img width="800" alt="lb_create" src="Assets/Gifs/lb_create.gif"> 
 
- [APIkey-ClassicInfrastructure](https://cloud.ibm.com/docs/iam?topic=iam-classic_keys&locale=es)
+Al crearse el load balancer se podrá obserar en el dashboard el cual mostrará las caracteristicas del mismo como son:
+- Status
+- Name
+- Resource Group
+- Hostname
+- Location
+
+Como se muestra a continuación:
+
+<img width="800" alt="lb_vpc" src="Assets/Images/lbs.PNG"> 
+
+**Load balancer - Hostname Record Cloud Internet Services**
+
+Para esta parte se vinculará el hostname del Load balancer a los DNS Records, para que el dominio del Internet Services se le asigne a la aplicación que se esta configurando. Se debe agregar el hostname de la siguiente manera:
+
+<img width="800" alt="lb_record" src="Assets/Gifs/lb_record.gif"> 
 
 ### Pasos para el despliegue en Schematics 🔧
 
