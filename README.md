@@ -2,7 +2,7 @@
 
 _Implementación de Cloud Internet Services en una aplicaación desplegada en una Instancia de VPC_
 
-<img width="940" alt="BareMetal-Architecture" src="">
+<img width="940" alt="BareMetal-Architecture" src="architecture.PNG">
 
 ## Prerrequisitos 🛑
 
