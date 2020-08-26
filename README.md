@@ -4,59 +4,41 @@ _Implementación de Cloud Internet Services en una aplicaación desplegada en un
 
 <img width="940" alt="BareMetal-Architecture" src="">
 
-## Prerrequisitos 🚀
+## Prerrequisitos 🛑
 
 Para esta Demo se requiere de conocimiento básico de DNS y redes.
 Además de esto se requiere tener aprovisionado:
 - [VPC.](https://cloud.ibm.com/docs/vpc?topic=vpc-getting-started)
-- [Instancia en una VPC](https://cloud.ibm.com/docs/vpc?topic=vpc-vsi_best_practices) con un servicion web configurado en ella.
-- [Load Balancer.](https://cloud.ibm.com/docs/vpc?topic=vpc-nlb-vs-elb)
+- 2 [Instancias en la VPC](https://cloud.ibm.com/docs/vpc?topic=vpc-vsi_best_practices) con un servicion web configurado en ella.
+- Configurar cada instancia como servidor de una misma aplicación
 - [Listas de control de accesos](https://cloud.ibm.com/docs/vpc?topic=vpc-using-acls)
 
-Además de los recursos de IBM Cloud se requiere de un **DNS** reservado. Sin embargo, si no tiene un **DNS** reservado puede aprovisionar uno con IBM Cloud:
+## Contenido 📋
+**_Instrucciones_**
+Esta demo se divide en 4 factores importantes las cuales son:
+- **Configuración de dominio y hostname**
+- **Configuración de acceso al dominio**
+- **Certificado SSL**
+- **Certificado de origen**
 
-- [Registro de DNS](https://cloud.ibm.com/docs/dns/getting-started.html)
-
+Las diferentes configuraciones de esta demo se gestionan en diferentes servicios como **Cloud Internet Services**, **Virtual Private Cloud**, **Certificate Manager** e incluso la herramienta de **Access IAM**
 
 ## Comenzando 🚀
-_Instrucciones_
-
-Para la implementación de Cloud Internet Services en una VPC se procede a la creación de un servicio de Internet Services, siguiendo las instrucciones del siguiente enlace:
-
+### Configuración del dominio y el hostname
+**Cloud Internet Services**
+Para empezar, se debe crear un servicio de Internet Services, siguiendo las instrucciones del siguiente enlace:
 - [Iniciación a IBM Cloud Internet Services](https://cloud.ibm.com/docs/cis?topic=cis-getting-started)
 
-Ingrese al recurso de Internet Services en IBM Cloud y proceda a conectar el Dominion reservado en este recurso.
-Para ello realice lo siguiente:
+Luego de ello debe configurar un DNS reservado en el Internet Services creado previamente de la siguiente manera:
+- Si ya se tiene un DNS reservado debe copiar los NS (Name Servers) y configurarlos dentro de Internet Services. Los NS tienen la siguiente estructura **ns#.provider.com**. Si tiene más de una deberá configurarlo en Internet Services como se muestra a continuación:
+    1. Ingrese a la herramienta de Internet Services creada. Le va a aparecer el siguiente Dashboard:
+       <img width="940" alt="CIS Dashboard" src="Assets/Images/"> 
+    2. 
 
 
 
-### Variables 📋
 
-El aprovisionamiento de un BareMetal mensual con el provider terraform cuenta con las siguientes caracteristicas:
-
-| Variable | Información |
-| ------------- | ------------- |
-| **ibmcloud_apikey**  | [API key](https://cloud.ibm.com/docs/iam?topic=iam-userapikey) unica del usuario que se requiere para aprovisionamiento de recursos |
-| **ibm_region**  | Region en la que se encuentra ubicado el datacenter donde se aprovisionará el recurso |
-| **bm_hostname** | Nombre del BareMetal a provisionar _No mayusculas_ |
-| **bm_os_reference_code** | Referencia del paquete de sistemas operativos a instalar sobre el BareMetal (Depende de la capacidad del procesador elegida)|
-|**datacenter**| [Datacenter](https://api.softlayer.com/rest/v3/SoftLayer_Hardware/getCreateObjectOptions.json) en el cual se aprovisionará el BareMetal |
-| **bm_domain** | Dominio del Baremetal ´nombre del dominio´.cloud.com |
-| **bm_network_speed** | Velocidad de la red |
-| **private_network** | Si se requiere de un enlace a la red publica se coloca _false_ de lo contrario _true_ |
-| **processor** | [Script con nombres clave de paquetes de procesador](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={%22type%22:{%22keyName%22:{%22operation%22:%22BARE_METAL_CPU%22}}}) a instalar sobre el BareMetal (Depende de la capacidad del procesador elegida|
-| **key_process** | [Script con nombres clave de procesador](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={%22type%22:{%22keyName%22:{%22operation%22:%22BARE_METAL_CPU%22}}}) a instalar sobre el BareMetal (Depende de la capacidad del procesador elegida |
-| **disk_key_name** | Nombre clave de disco(s) de almacenamiento |
-| **notes** | Notas de información del BareMetal |
-
-
-Para acceder a información de **api softlayer** se requiere de la [APIkey-ClassicInfrastructure](https://cloud.ibm.com/docs/iam?topic=iam-classic_keys&locale=es) y el usuario de la cuenta 
-
-La variable **bm_os_reference_code** cuenta con las siguientes opciones para SAP - Certified
-
-- OS_WINDOWS_SERVER_2019_DATACENTER_EDITION_64BIT ( Windows Server 2019 Datacenter Edition (64 bit) )
-- (5DWPD) ) 
-- HARD_DRIVE_2_00_TB_SATA_2 ( 2.00 TB SATA )
+ [APIkey-ClassicInfrastructure](https://cloud.ibm.com/docs/iam?topic=iam-classic_keys&locale=es)
 
 ### Pasos para el despliegue en Schematics 🔧
 
