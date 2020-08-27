@@ -52,11 +52,7 @@ Luego de ello debe configurar un DNS reservado en el Internet Services creado pr
 
     3. Para dejar el estado del dominio en Internet Services activo se debe configurar los **NS** antes mencionados en los records de Internet Services. Para ello, se debe dirigir a la pestaña de **Reliability** en la opción de **DNS**. Una vez allí, en la parte inferior de la ventana se encontraran los **Records** donde se configurarán los **NS**
 
-    Se debe llenar cada uno de los campos de **DNS Records** de la siguiente manera:
-     - Type: NS
-     - Name: @
-     - TTL: Automatic
-     - Name Server: **ns´s del DNS reservado**
+    
 
     <img width="800" alt="records" src="Assets/Gifs/ns_record.gif"> 
 
@@ -86,7 +82,13 @@ Como se muestra a continuación:
 
 **Load balancer - Hostname DNS Record**
 
-Para que vincular su dominio personalizado a la aplicación que se está configurando aguregue un registro CNAME que apunte al Host name del Load Balancer y active el proxy, de la siguiente manera:
+Para que vincular su dominio personalizado a la aplicación que se está configurando aguregue un registro CNAME que apunte al Host name del Load Balancer y active el proxy.
+
+Se debe llenar cada uno de los campos de **DNS Records** de la siguiente manera:
+     - Type: CNAME
+     - Name: @
+     - TTL: Automatic
+     - Name Server: **hostname del load balancer**
 
 <img width="800" alt="lb_record" src="Assets/Gifs/lb_record.gif"> 
 
