@@ -26,7 +26,9 @@ Las diferentes configuraciones de esta demo se gestionan en diferentes servicios
 ## Comenzando 🚀
 
 ### 1. Configuración del dominio
+
 **Cloud Internet Services**
+
 Para empezar, se debe crear un servicio de Internet Services, siguiendo las instrucciones del siguiente enlace:
 - [Iniciación a IBM Cloud Internet Services](https://cloud.ibm.com/docs/cis?topic=cis-getting-started)
 
@@ -86,17 +88,27 @@ Para que vincular su dominio personalizado a la aplicación que se está configu
 
 ### 2. Configuración de acceso a la aplicación 🔧
 
-Esta configuración se realiza para mejorar la seguridad de la aplicación, ya que limita el acceso mediante la creación de una ACL, permitiendo la comunicación al Load Balancer únicamente desde la instancia de Internet Services. Para la configuración siga los pasos a continuación:
+Esta configuración se limita el acceso a la aplicación mediante la creación de una ACL, permitiendo la comunicación al Load Balancer únicamente desde la instancia de Internet Services. Para esta configuración siga los pasos a continuación:
 
 1. Ingrese en las lista de VPC´s dentro de la página de IBM Cloud, allí encontrará el nombre de su VPC con la ACL y grupo de seguridad asociados de forma predeterminada, ingrese a la ACL dando click sobre su nombre.
 
 <img width="800" alt="ACL_record" src="Assets/Images/ACL_on_VPC.png"> 
 
-2. Por defecto la ACL deniega todo el tráfico, por lo que en este paso solo debe agregar reglas para permitir el tráfico proveniente de Internet Services. (La API en este link)[https://api.cis.cloud.ibm.com/v1/ips] enumera todas las direcciones IP utilizadas por el proxy de CIS. El proxy de CIS utiliza solo direcciones de esta lista, tanto para la comunicación de cliente a proxy como de proxy a origen. Agregue una regla para cada uno de estos rangos de IP´s seleccionando **Crear**, en protocolos seleccione**Todos**, luego seleccione **CI o CIDR** y pegue la IP, en destino seleccione **Cualquiera** y para finalizar guarde los cambios.
+2. Por defecto la ACL deniega todo el tráfico, por lo que en este paso solo necesitará agregar reglas que permitan el tráfico proveniente de Internet Services. [En este link ](https://api.cis.cloud.ibm.com/v1/ips) encontrará la API que enumera todas las direcciones IP utilizadas por el proxy de CIS. El proxy de CIS utiliza solo direcciones de esta lista, tanto para la comunicación de cliente a proxy como de proxy a origen. Agregue una regla para cada uno de estos rangos de IP´s seleccionando: **Crear**, en protocolos seleccione **Todos**, luego seleccione **CI o CIDR** y pegue la IP, en destino seleccione **Cualquiera** y para finalizar guarde los cambios.
 
 <img width="800" alt="lb_record" src="Assets/Gifs/add_rule.gif"> 
 
-### Certificación SSL 🛡️
+### Certificado SSL 🛡️
+
+En esta parte del repositorio se enumerar los pasos para solicitar y configurar el certificado SSL para nuestro dominio, con el fin de cifrar los datos en tránsito.
+
+1. Cree una instancia de IBM Cloud Certificate Manager para gestionar los certificados SSL, tendrá que elegir un nombre único, una ubicación soportada y un grupo de recursos.
+
+2. Cree una autorización que proporcione al balanceador de carga de VPC acceso a la instancia de Certificate Manager. Para esto ingrese en **Gestionar** -> **Acceso (IAM)** -> **Autorizaciones** pulse **Crear** y seleccione **Servicio de infraestructura** como servicio de origen, elija **Equilibrador de carga para VPC** como tipo de recurso, seleccione su instancia en **instancia de servicio de origen**, ponga **Gestor de certificados** como servicio de destino, elija su instancia en **instancia de servicio de destino** y finalmente asigne el rol de acceso al servicio de **Escritor**.
+
+3. Cree una segunda autorización que proporcione al certificate manager acceso a la instancia de Internet Services y así poder solicitar el certificado para su dominio. Para esto seleccione **Certificate manager** como servicio de origen, elija su instancia en **instancia de servicio de origen**, luego seleccione **Internet Servicess** como servicio de destino, elija su instancia en **instancia de servicio de destino** y finalmente asigne el rol de acceso al servicio de **Manager**.
+
+<img width="800" alt="lb_record" src="Assets/Gifs/add_authorization.gif> 
 
 
 ### Herrameintas de Internet Services 🛠️
