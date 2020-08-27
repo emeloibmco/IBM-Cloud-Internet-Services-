@@ -42,7 +42,10 @@ Luego de ello debe configurar un DNS reservado en el Internet Services creado pr
     <img width="940" alt="Conf domain" src="Assets/Images/set_domain.PNG"> 
 
     - En la pestaña **Connect your domain** se agregará el dominio reservado que posee, sin embargo, no se verá afectado el trafico de dicho dominio hasta cambiar los Name Servers.
-    - En la configuración **Setup your DNS records** debe importar un archivo TXT que contenga 
+    - En la configuración **Setup your DNS records** debe importar el **record** de su dominio el cual encontrará en la infromación del mismo. En caso de haber solicitado el dominio en IBM Cloud, el record se encuentra de la siguiente manera:
+
+    <img width="800" alt="imp_records" src="Assets/Gifs/imp_records.gif"> 
+
     Una vez configurado el DNS reservado en la herramienta de Internet Service el estado del dominió aparecerá **pending** como se observa en la siguiente imagen:
 
     <img width="940" alt="state" src="Assets/Images/state_pre_ns.PNG"> 
