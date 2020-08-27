@@ -37,26 +37,18 @@ Luego de ello debe configurar un DNS reservado en el Internet Services creado pr
 - Si ya se tiene un DNS reservado debe copiar los NS (Name Servers) y configurarlos dentro de Internet Services. Los NS tienen la siguiente estructura **ns#.provider.com**. Si tiene más de una deberá configurarlo en Internet Services como se muestra a continuación:
     1. Ingrese a la herramienta de Internet Services creada. Le va a aparecer el dashboard de la pestaña **overview** donde encontrará un boton **Lest´s start** para empezar con la configuración de Internet Services
 
-    2. Al clickear en **Let´s start** aparecerá una pesataña lateral para conectar el dominio, configurar DNS record y delegar gestión del dominio, como se muestra a continuación:
+    2. Al clickear en **Let´s start** aparecerá una pestaña lateral para conectar el dominio, configurar DNS record y delegar gestión del dominio, como se muestra a continuación:
 
     <img width="940" alt="Conf domain" src="Assets/Images/set_domain.PNG"> 
 
-    - En la pestaña **Connect your domain** se agregará el dominio reservado que posee, sin embargo, no se verá afectado el trafico de dicho dominio hasta cambiar los Name Servers.
-    - En la configuración **Setup your DNS records** debe importar el **record** de su dominio el cual encontrará en la infromación del mismo. En caso de haber solicitado el dominio en IBM Cloud, el record se encuentra de la siguiente manera:
+    3. En la pestaña **Connect your domain** se agregará el dominio reservado que posee, sin embargo, no se verá afectado el trafico de dicho dominio hasta cambiar los Name Servers.
+    4. En la configuración **Setup your DNS records** debe importar el **record** de su dominio el cual encontrará en la infromación del mismo. En caso de haber solicitado el dominio en IBM Cloud, el record se encuentra y se impor como se muestra a continuación:
 
     <img width="800" alt="imp_records" src="Assets/Gifs/imp_records.gif"> 
 
-    Una vez configurado el DNS reservado en la herramienta de Internet Service el estado del dominió aparecerá **pending** como se observa en la siguiente imagen:
-
-    <img width="940" alt="state" src="Assets/Images/state_pre_ns.PNG"> 
-
-    3. Para dejar el estado del dominio en Internet Services activo se debe configurar los **NS** antes mencionados en los records de Internet Services. Para ello, se debe dirigir a la pestaña de **Reliability** en la opción de **DNS**. Una vez allí, en la parte inferior de la ventana se encontraran los **Records** donde se configurarán los **NS**
-
-    
-
-    <img width="800" alt="records" src="Assets/Gifs/ns_record.gif"> 
-
-    Una vez configurados los **Name Server** la conexión entre el DNS y el Internet Services tomará hasta 24 horas.
+    5. Después, se configurará en el proveedor de DNS, los NS que entrega el Internet Services en la configuración de **Delegate domain mangement**. Copie lo NS y agreguelos en el **Domain Registration** de su proveedor de DNS. Si el proveedor es IBM Cloud dirjase a **Classic Infrastructure > Services > Domain Registration**, allí encontrará su dominio y en él la opción **Add/Edit NS** donde podrá agregar hasta 5 **Name Servers (NS)**
+   
+Una vez configurado el DNS reservado en la herramienta de Internet Service, el estado del dominió aparecerá **pending**, esto se debe a que la configuración del dominio puede llevar hasta 24 horas.
 
 **VPC hostname - Load Balancer**
 
