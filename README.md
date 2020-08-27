@@ -1,10 +1,10 @@
-# IBM-Cloud-Internet-Services-
+# IBM Cloud Internet Services
 
 En ste repositorio encontrará el detalle de la implementación de IBM Cloud Internet Services con una aplicación desplegada en dos VSI on VPC para alta disponibilidad y cuyo tráfico es gestionado por un Balanceador de Carga. También encontrará el paso a paso de la configuración de los diferentes servicios de Internet services para la seguridad de la aplicación web.
 
 <img width="940" alt="BareMetal-Architecture" src="Assets/Images/architecture.PNG">
 
-### Indice:
+## Contenido:
 1. [Configuración del dominio](#1-acceso-a-skytap-on-ibm-cloud)
 2. [Configuración de acceso a la aplicación](#2-preparar-imagen-de-la-máquina-power-aix)
 3. [Certificado SSL](#3-crear-un-trabajo-de-importación-en-skytap)
@@ -14,7 +14,7 @@ En ste repositorio encontrará el detalle de la implementación de IBM Cloud Int
 7. [Edge Functions]()
 8. [Referencias](#referencias-)
 
-## Prerrequisitos 🛑
+## Prerrequisitos 
 
 Para esta Demo se requiere de conocimiento básico de DNS y redes.
 Además de esto se requiere tener aprovisionado:
@@ -23,19 +23,10 @@ Además de esto se requiere tener aprovisionado:
 - Configurar cada instancia como servidor de una misma aplicación
 - [Listas de control de accesos](https://cloud.ibm.com/docs/vpc?topic=vpc-using-acls)
 
-## Contenido 📋
-**_Instrucciones_**
-Esta demo se divide en 4 factores importantes las cuales son:
-- **Configuración de dominio y hostname**
-- **Configuración de acceso al dominio**
-- **Certificado SSL**
 
+Las diferentes configuraciones de esta guía se gestionan en servicios como **Cloud Internet Services**, **Virtual Private Cloud**, **Certificate Manager** e incluso la herramienta de **Access IAM**.
 
-Las diferentes configuraciones de esta demo se gestionan en diferentes servicios como **Cloud Internet Services**, **Virtual Private Cloud**, **Certificate Manager** e incluso la herramienta de **Access IAM**
-
-## Comenzando 🚀
-
-### 1. Configuración del dominio
+### 1. Configuración del dominio :computer:
 
 **Cloud Internet Services**
 
@@ -120,10 +111,10 @@ En esta parte del repositorio se enumerar los pasos para solicitar y configurar 
 
 <img width="800" alt="lb_record" src="Assets/Gifs/add_authorization.gif"> 
 
-### 4. Certificado de origen
-### 5. Protección contra ataques DDoS
-### 6. Reglas de firewall
-### 7. Edge Functions
-### 8. Referencias
+### 4. Certificado de origen 🛡️
+### 5. Protección contra ataques DDoS 🔐
+### 6. Reglas de firewall 🚫
+### 7. Edge Functions 🔑
+### 8. Referencias 🔎
 
-#### Autores: IBM Cloud Tech Sales
+## Autores: IBM Cloud Tech Sales
