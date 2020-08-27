@@ -39,12 +39,16 @@ Luego de ello debe configurar un DNS reservado en el Internet Services creado pr
 
     2. Al clickear en **Let´s start** aparecerá una pestaña lateral para conectar el dominio, configurar DNS record y delegar gestión del dominio, como se muestra a continuación:
 
-    <img width="940" alt="Conf domain" src="Assets/Images/set_domain.PNG"> 
+
+        <img width="940" alt="Conf domain" src="Assets/Images/set_domain.PNG"> 
+        
 
     3. En la pestaña **Connect your domain** se agregará el dominio reservado que posee, sin embargo, no se verá afectado el trafico de dicho dominio hasta cambiar los Name Servers.
     4. En la configuración **Setup your DNS records** debe importar el **record** de su dominio el cual encontrará en la infromación del mismo. En caso de haber solicitado el dominio en IBM Cloud, el record se encuentra y se impor como se muestra a continuación:
 
-    <img width="800" alt="imp_records" src="Assets/Gifs/imp_records.gif"> 
+
+        <img width="800" alt="imp_records" src="Assets/Gifs/imp_records.gif"> 
+
 
     5. Después, se configurará en el proveedor de DNS, los NS que entrega el Internet Services en la configuración de **Delegate domain mangement**. Copie lo NS y agreguelos en el **Domain Registration** de su proveedor de DNS. Si el proveedor es IBM Cloud dirjase a **Classic Infrastructure > Services > Domain Registration**, allí encontrará su dominio y en él la opción **Add/Edit NS** donde podrá agregar hasta 5 **Name Servers (NS)**
    
@@ -77,16 +81,18 @@ Como se muestra a continuación:
 Para que vincular su dominio personalizado a la aplicación que se está configurando aguregue un registro CNAME que apunte al Host name del Load Balancer y active el proxy.
 
 Se debe llenar cada uno de los campos de **DNS Records** de la siguiente manera:
-     - Type: CNAME
-     - Name: @
-     - TTL: Automatic
-     - Name Server: **hostname del load balancer**
+- Type: CNAME
+- Name: @
+- TTL: Automatic
+- Name Server: **hostname del load balancer**
 
 <img width="800" alt="lb_record" src="Assets/Gifs/lb_record.gif"> 
 
+Luego de configurar el **hostname del Load Balancer** como link de acceso, podrá ingresar a la aplicación viculada al mismo desde el Dominio vinculado al **Internet Services** 
+
 ## 2. Configuración de acceso a la aplicación 🔧
 
-Esta configuración se limita el acceso a la aplicación mediante la creación de una ACL, permitiendo la comunicación al Load Balancer únicamente desde la instancia de Internet Services. Para esta configuración siga los pasos a continuación:
+En esta configuración se limita el acceso a la aplicación mediante la creación de una ACL, permitiendo la comunicación al Load Balancer únicamente desde la instancia de **Internet Services**. Para esta configuración siga los pasos a continuación:
 
 1. Ingrese en las lista de VPC´s dentro de la página de IBM Cloud, allí encontrará el nombre de su VPC con la ACL y grupo de seguridad asociados de forma predeterminada, ingrese a la ACL dando click sobre su nombre.
 
