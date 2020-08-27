@@ -4,6 +4,16 @@ En ste repositorio encontrará el detalle de la implementación de IBM Cloud Int
 
 <img width="940" alt="BareMetal-Architecture" src="Assets/Images/architecture.PNG">
 
+### Indice:
+1. [Configuración del dominio](#1-acceso-a-skytap-on-ibm-cloud)
+2. [Configuración de acceso a la aplicación](#2-preparar-imagen-de-la-máquina-power-aix)
+3. [Certificado SSL](#3-crear-un-trabajo-de-importación-en-skytap)
+4. [Certificado de origen](#4-cargar-los-archivos-vía-ftp)
+5. [Protección contra ataques DDoS](#5-inicio-del-proceso-de-análisis-e-importación)
+6. [Reglas de firewall]()
+7. [Edge Functions]()
+8. [Referencias](#referencias-)
+
 ## Prerrequisitos 🛑
 
 Para esta Demo se requiere de conocimiento básico de DNS y redes.
@@ -98,7 +108,7 @@ Esta configuración se limita el acceso a la aplicación mediante la creación d
 
 <img width="800" alt="lb_record" src="Assets/Gifs/add_rule.gif"> 
 
-### Certificado SSL 🛡️
+### 3. Certificado SSL 🛡️
 
 En esta parte del repositorio se enumerar los pasos para solicitar y configurar el certificado SSL para nuestro dominio, con el fin de cifrar los datos en tránsito.
 
@@ -108,11 +118,12 @@ En esta parte del repositorio se enumerar los pasos para solicitar y configurar 
 
 3. Cree una segunda autorización que proporcione al certificate manager acceso a la instancia de Internet Services y así poder solicitar el certificado para su dominio. Para esto seleccione **Certificate manager** como servicio de origen, elija su instancia en **instancia de servicio de origen**, luego seleccione **Internet Servicess** como servicio de destino, elija su instancia en **instancia de servicio de destino** y finalmente asigne el rol de acceso al servicio de **Manager**.
 
-<img width="800" alt="lb_record" src="Assets/Gifs/add_authorization.gif> 
+<img width="800" alt="lb_record" src="Assets/Gifs/add_authorization.gif"> 
 
+### 4. Certificado de origen
+### 5. Protección contra ataques DDoS
+### 6. Reglas de firewall
+### 7. Edge Functions
+### 8. Referencias
 
-### Herrameintas de Internet Services 🛠️
-
-
----
 #### Autores: IBM Cloud Tech Sales
