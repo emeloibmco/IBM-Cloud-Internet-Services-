@@ -26,7 +26,7 @@ Además de esto se requiere tener aprovisionado:
 
 Las diferentes configuraciones de esta guía se gestionan en servicios como **Cloud Internet Services**, **Virtual Private Cloud**, **Certificate Manager** e incluso la herramienta de **Access IAM**.
 
-### 1. Configuración del dominio :computer:
+## 1. Configuración del dominio :computer:
 
 **Cloud Internet Services**
 
@@ -87,7 +87,7 @@ Para que vincular su dominio personalizado a la aplicación que se está configu
 
 <img width="800" alt="lb_record" src="Assets/Gifs/lb_record.gif"> 
 
-### 2. Configuración de acceso a la aplicación 🔧
+## 2. Configuración de acceso a la aplicación 🔧
 
 Esta configuración se limita el acceso a la aplicación mediante la creación de una ACL, permitiendo la comunicación al Load Balancer únicamente desde la instancia de Internet Services. Para esta configuración siga los pasos a continuación:
 
@@ -99,7 +99,7 @@ Esta configuración se limita el acceso a la aplicación mediante la creación d
 
 <img width="800" alt="lb_record" src="Assets/Gifs/add_rule.gif"> 
 
-### 3. Certificado SSL 🛡️
+## 3. Certificado SSL 🛡️
 
 En esta parte del repositorio se enumerar los pasos para solicitar y configurar el certificado SSL para nuestro dominio, con el fin de cifrar los datos en tránsito.
 
@@ -111,10 +111,10 @@ En esta parte del repositorio se enumerar los pasos para solicitar y configurar 
 
 <img width="800" alt="lb_record" src="Assets/Gifs/add_authorization.gif"> 
 
-### 4. Certificado de origen 🛡️
-### 5. Protección contra ataques DDoS 🔐
-### 6. Reglas de firewall 🚫
-### 7. Edge Functions 🔑
-### 8. Referencias 🔎
+## 4. Certificado de origen 🛡️
+## 5. Protección contra ataques DDoS 🔐
+## 6. Reglas de firewall 🚫
+## 7. Edge Functions 🔑
+## 8. Referencias 🔎
 
 ## Autores: IBM Cloud Tech Sales
