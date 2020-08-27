@@ -2,7 +2,7 @@
 
 En ste repositorio encontrará el detalle de la implementación de IBM Cloud Internet Services con una aplicación desplegada en dos VSI on VPC para alta disponibilidad y cuyo tráfico es gestionado por un Balanceador de Carga. También encontrará el paso a paso de la configuración de los diferentes servicios de Internet services para la seguridad de la aplicación web.
 
-<img width="940" alt="BareMetal-Architecture" src="Assets/Images/Architecture2.png">
+<img width="940" alt="BareMetal-Architecture" src="Assets/Images/Arquitecture2.png">
 
 ## Contenido:
 1. [Configuración del dominio](#1-acceso-a-skytap-on-ibm-cloud)
