@@ -26,8 +26,7 @@ Las diferentes configuraciones de esta guía se gestionan en servicios como **Cl
 
 ## 1. Configuración del dominio :computer:
 
-Para empezar, se debe crear un servicio de Internet Services, siguiendo las instrucciones del siguiente enlace:
-- [Iniciación a IBM Cloud Internet Services](https://cloud.ibm.com/docs/cis?topic=cis-getting-started)
+Para empezar, se debe crear un servicio de Internet Services, siguiendo las instrucciones del enlace: [Iniciación a IBM Cloud Internet Services](https://cloud.ibm.com/docs/cis?topic=cis-getting-started)
 
     1. Ingrese a la herramienta de Internet Services creada. Le va a aparecer el dashboard de la pestaña **overview** donde encontrará un boton **Lest´s start** para empezar con la configuración de Internet Services.
 
@@ -49,7 +48,7 @@ Una vez configurado el DNS reservado en la herramienta de Internet Service, el e
 
 En esta guía los servidores estan conectados a un Load Balancer y el usuario accede a la aplicación mediante su Host name. Para dirigir el tráfico a Internet Services y que este añada una capa de seguridad antes de que el tráfico pase por el Load Balancer y llegue a sus servidores, siga los pasos:
 
-1. Aprovisione el Load Balancer, para esto se debe dirigir a **VPC Infrastructure** en el menú principal de IBM Cloud y una vez allí debe ingresar al dashboard del Load balancer seleccionando **Load Balancer** en el menú de herramientas de VPC como se observa el la siguiente imagen:
+Aprovisione el Load Balancer, para esto se debe dirigir a **VPC Infrastructure** en el menú principal de IBM Cloud y una vez allí debe ingresar al dashboard del Load balancer seleccionando **Load Balancer** en el menú de herramientas de VPC como se observa el la siguiente imagen:
 
 <img width="800" alt="lb_vpc" src="Assets/Images/lb_vpc.PNG"> 
 
@@ -58,12 +57,6 @@ Una vez allí se procede a crear el load balancer como se observa a continuació
 <img width="800" alt="lb_create" src="Assets/Gifs/lb_create.gif"> 
 
 Al crearse el load balancer se podrá obserar en el dashboard el cual mostrará las caracteristicas del mismo como son:
-
-- Status
-- Name
-- Resource Group
-- Hostname
-- Location
 
 <img width="800" alt="lb_vpc" src="Assets/Images/lbs.PNG"> 
 
