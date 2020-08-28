@@ -28,18 +28,17 @@ Las diferentes configuraciones de esta guía se gestionan en servicios como **Cl
 
 Para empezar, se debe crear un servicio de Internet Services, siguiendo las instrucciones del enlace: [Iniciación a IBM Cloud Internet Services](https://cloud.ibm.com/docs/cis?topic=cis-getting-started)
 
-    1. Ingrese a la herramienta de Internet Services creada. Le va a aparecer el dashboard de la pestaña **overview** donde encontrará un boton **Lest´s start** para empezar con la configuración de Internet Services.
+   1. Ingrese a la herramienta de Internet Services creada. Le va a aparecer el dashboard de la pestaña **overview** donde encontrará un boton **Lest´s start** para empezar con la configuración de Internet Services.
 
-    2. Al dar click en **Let´s start** aparecerá una pestaña lateral para conectar el dominio, configurar DNS record y delegar gestión del dominio, como se muestra a continuación:
+   2. Al dar click en **Let´s start** aparecerá una pestaña lateral para conectar el dominio, configurar DNS record y delegar gestión del dominio, como se muestra a continuación:
 
         <img width="940" alt="Conf domain" src="Assets/Images/set_domain.PNG"> 
         
-    3. En la pestaña **Connect your domain** se agregará el dominio reservado que posee, sin embargo, no se verá afectado el trafico de dicho dominio hasta cambiar los Name Servers como se muestra en el siguiente paso.
+   3. En la pestaña **Connect your domain** se agregará el dominio reservado que posee, sin embargo, no se verá afectado el trafico de dicho dominio hasta cambiar los Name Servers como se muestra en el siguiente paso.
     
-    4. En la configuración **Setup your DNS records** debe importar el **record** de su dominio el cual encontrará en su proveedor DNS. En caso de haber solicitado el dominio en IBM Cloud, el record se encuentra y se importa como se muestra a continuación:
+   4. En la configuración **Setup your DNS records** debe importar el **record** de su dominio el cual encontrará en su proveedor DNS. En caso de haber solicitado el dominio en IBM Cloud, el record se encuentra y se importa como se muestra a continuación:
 
         <img width="800" alt="imp_records" src="Assets/Gifs/imp_records.gif"> 
-
     5. Después, se configurará en el proveedor de DNS, los NS que entrega el Internet Services en la configuración de **Delegate domain mangement**. Copie lo NS y agreguelos en el **Domain Registration** de su proveedor de DNS. Si el proveedor es IBM Cloud diríjase a **Classic Infrastructure > Services > Domain Registration**, allí encontrará su dominio y en él la opción **Add/Edit NS** donde podrá agregar hasta 5 **Name Servers (NS)**
    
 Una vez configurado el DNS reservado en la herramienta de Internet Service, el estado del dominió aparecerá **pending**, esto se debe a que la configuración del dominio puede tomar hasta 24 horas.
@@ -48,11 +47,11 @@ Una vez configurado el DNS reservado en la herramienta de Internet Service, el e
 
 En esta guía los servidores estan conectados a un Load Balancer y el usuario accede a la aplicación mediante su Host name. Para dirigir el tráfico a Internet Services y que este añada una capa de seguridad antes de que el tráfico pase por el Load Balancer y llegue a sus servidores, siga los pasos:
 
-Aprovisione el Load Balancer, para esto se debe dirigir a **VPC Infrastructure** en el menú principal de IBM Cloud y una vez allí debe ingresar al dashboard del Load balancer seleccionando **Load Balancer** en el menú de herramientas de VPC como se observa el la siguiente imagen:
+1. Aprovisione el Load Balancer, para esto se debe dirigir a **VPC Infrastructure** en el menú principal de IBM Cloud y una vez allí debe ingresar al dashboard del Load balancer seleccionando **Load Balancer** en el menú de herramientas de VPC como se observa el la siguiente imagen:
 
 <img width="800" alt="lb_vpc" src="Assets/Images/lb_vpc.PNG"> 
 
-Una vez allí se procede a crear el load balancer como se observa a continuación:
+2. Una vez allí se procede a crear el load balancer como se observa a continuación:
 
 <img width="800" alt="lb_create" src="Assets/Gifs/lb_create.gif"> 
 
@@ -64,7 +63,7 @@ Al crearse el load balancer se podrá obserar en el dashboard el cual mostrará 
 
 Para vincular su dominio personalizado a la aplicación que se está configurando agregue un registro CNAME que apunte al Host name del Load Balancer y active el proxy.
 
-Se debe llenar cada uno de los campos de **DNS Records** de la siguiente manera:
+1. Se debe llenar cada uno de los campos de **DNS Records** de la siguiente manera:
 
 - Type: CNAME
 - Name: @
@@ -73,7 +72,7 @@ Se debe llenar cada uno de los campos de **DNS Records** de la siguiente manera:
 
 <img width="800" alt="lb_record" src="Assets/Gifs/lb_record.gif"> 
 
-Luego de configurar el **hostname del Load Balancer** como link de acceso, podrá ingresar a la aplicación viculada al mismo desde el Dominio vinculado al **Internet Services** 
+2. Luego de configurar el **hostname del Load Balancer** como link de acceso, podrá ingresar a la aplicación viculada al mismo desde el Dominio vinculado al **Internet Services** 
 
 ## 2. Configuración de acceso a la aplicación 🚦
 
