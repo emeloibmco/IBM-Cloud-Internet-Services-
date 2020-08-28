@@ -5,14 +5,14 @@ En ste repositorio encontrará el detalle de la implementación de IBM Cloud Int
 <img width="940" alt="BareMetal-Architecture" src="Assets/Images/Arquitecture2.png">
 
 ## Contenido:
-1. [Configuración del dominio](#1-acceso-a-skytap-on-ibm-cloud)
-2. [Configuración de acceso a la aplicación](#2-preparar-imagen-de-la-máquina-power-aix)
-3. [Certificado SSL](#3-crear-un-trabajo-de-importación-en-skytap)
-4. [Certificado de origen](#4-cargar-los-archivos-vía-ftp)
-5. [Protección contra ataques DDoS](#5-inicio-del-proceso-de-análisis-e-importación)
-6. [Reglas de firewall]()
-7. [Edge Functions]()
-8. [Referencias](#referencias-)
+1. [Configuración del dominio](#1-configuración-del-dominio-computer)
+2. [Configuración de acceso a la aplicación](#2-configuración-de-acceso-a-la-aplicación-)
+3. [Certificado SSL](#3-certificado-ssl-%EF%B8%8F)
+4. [Certificado de origen](#4-certificado-de-origen-%EF%B8%8F)
+5. [Protección contra ataques DDoS](#5-protección-contra-ataques-ddos-)
+6. [Reglas de firewall](#6-reglas-de-firewall-)
+7. [Edge Functions](#7-edge-functions-)
+8. [Referencias](#8-referencias-)
 
 ## Prerrequisitos 
 
@@ -39,7 +39,8 @@ Para empezar, se debe crear un servicio de Internet Services, siguiendo las inst
    4. En la configuración **Setup your DNS records** debe importar el **record** de su dominio el cual encontrará en su proveedor DNS. En caso de haber solicitado el dominio en IBM Cloud, el record se encuentra y se importa como se muestra a continuación:
 
         <img width="800" alt="imp_records" src="Assets/Gifs/imp_records.gif"> 
-    5. Después, se configurará en el proveedor de DNS, los NS que entrega el Internet Services en la configuración de **Delegate domain mangement**. Copie lo NS y agreguelos en el **Domain Registration** de su proveedor de DNS. Si el proveedor es IBM Cloud diríjase a **Classic Infrastructure > Services > Domain Registration**, allí encontrará su dominio y en él la opción **Add/Edit NS** donde podrá agregar hasta 5 **Name Servers (NS)**
+      
+   5. Después, se configurará en el proveedor de DNS, los NS que entrega el Internet Services en la configuración de **Delegate domain mangement**. Copie lo NS y agreguelos en el **Domain Registration** de su proveedor de DNS. Si el proveedor es IBM Cloud diríjase a **Classic Infrastructure > Services > Domain Registration**, allí encontrará su dominio y en él la opción **Add/Edit NS** donde podrá agregar hasta 5 **Name Servers (NS)**
    
 Una vez configurado el DNS reservado en la herramienta de Internet Service, el estado del dominió aparecerá **pending**, esto se debe a que la configuración del dominio puede tomar hasta 24 horas.
 
