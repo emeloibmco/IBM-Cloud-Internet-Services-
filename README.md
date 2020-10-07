@@ -96,6 +96,17 @@ En esta parte del repositorio se enumeran los pasos para solicitar y configurar 
 
 <img width="800" alt="lb_record" src="Assets/Gifs/add_authorization.gif"> 
 
+4. Solicite su certificado ingresando en la instancia de Certificate Manager y en la pestaña **Sus certificados** de clic en **Solicitar**. En el nuevo panel seleccione IBM Cloud Internet Services como proveedor de servicios de nombres de dominio (DNS). Luego proporcione los datos necesarios para el certificado:
+
+- Nombre
+- Entidad emisora
+- Algoritmo de firma
+- Algoritmo clave
+
+5. En el paso anterior puede dejar los valores por defecto si así lo desea. Finalmente ingrese a la pestaña **Dominios** y seleccione si instancia de Internet Services, con esto aparecerán los dominios vinculados a su instancia CIS. Para finalizar el proceso marque la opción **Añadir comodín** y pulse **Solicitar**.
+
+
+
 ## 4. Certificado de origen 🛡️
 
 Los certificados de origen son certificados TLS libres emitidos por IBM Cloud Internet Services que cifran el tráfico entre el servidor de origen y los usuarios. Solicite certificados TLS gratuitos para instalarlos en su servidor de origen mediante los siguientes pasos:
