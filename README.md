@@ -105,7 +105,7 @@ En esta parte del repositorio se enumeran los pasos para solicitar y configurar 
 
 5. En el paso anterior puede dejar los valores por defecto si así lo desea. Finalmente ingrese a la pestaña **Dominios** y seleccione si instancia de Internet Services, con esto aparecerán los dominios vinculados a su instancia CIS. Para finalizar el proceso marque la opción **Añadir comodín** y pulse **Solicitar**.
 
-
+<img width="800" alt="lb_record" src="https://user-images.githubusercontent.com/60897075/95363971-d284cd00-0895-11eb-889e-97f268abdb1d.gif">
 
 ## 4. Certificado de origen 🛡️
 
