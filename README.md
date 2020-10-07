@@ -1,6 +1,6 @@
 # IBM Cloud Internet Services
 
-En ste repositorio encontrará el detalle de la implementación de IBM Cloud Internet Services con una aplicación desplegada en dos VSI on VPC para alta disponibilidad y cuyo tráfico es gestionado por un Balanceador de Carga. También encontrará el paso a paso de la configuración de los diferentes servicios de Internet services para la seguridad de la aplicación web.
+En este repositorio encontrará el detalle de la implementación de IBM Cloud Internet Services con una aplicación desplegada en dos VSI on VPC para alta disponibilidad y cuyo tráfico es gestionado por un Balanceador de Carga. También encontrará el paso a paso de la configuración de los diferentes servicios de Internet services para la seguridad de la aplicación web.
 
 <img width="940" alt="BareMetal-Architecture" src="Assets/Images/Arquitecture2.png">
 
@@ -16,8 +16,7 @@ En ste repositorio encontrará el detalle de la implementación de IBM Cloud Int
 
 ## Prerrequisitos 
 
-Para esta Demo se requiere de conocimiento básico de DNS y redes.
-Además de esto se requiere tener aprovisionado:
+Se requiere tener aprovisionado:
 - Instancia de [VPC.](https://cloud.ibm.com/docs/vpc?topic=vpc-getting-started)
 - 2 VSI en VPC [VPC](https://cloud.ibm.com/docs/vpc?topic=vpc-vsi_best_practices) con un servicion web configurado en ella.
 - Configurar cada instancia como servidor de una misma aplicación.
